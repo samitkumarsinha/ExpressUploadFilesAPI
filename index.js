@@ -18,7 +18,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 const mongoose = require("mongoose");
-var uri = "mongodb+srv://samdb:unicorn1@cluster0.idow2.mongodb.net/school";
+var uri = "mongodb+srv://username:password@cluster0.idow2.mongodb.net/school";
 mongoose.connect(uri, { useUnifiedTopology: true, useNewUrlParser: true });
 var userschema = new mongoose.Schema({
   username: String,
