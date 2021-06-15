@@ -44,3 +44,27 @@ function uploadFiles(req, res) {
 var server = app.listen(port, () => {
   console.log(`Server running at port ${port}`);
 });
+
+
+/*
+calling multer from controller inside module.exports (multiple and single file upload)
+
+ createprofile(req, res) {
+    const storage = multer.diskStorage({
+      destination: (req, file, cb) => {
+        cb(null, "uploads/");
+      },
+      filename: (req, file, cb) => {
+        cb(null, Date.now() + "-" + file.originalname);
+      },
+    });
+    const upload = multer({ storage: storage }).single("files"); //.array("files",100);
+    upload(req, res, (err) => {
+      if (err) {
+        res.status(400).send("Something went wrong!");
+      }
+      res.json({ message: "Successfully uploaded files" });
+    });
+  },
+// call it from api router.post('/createprofile', usercontrol.createprofile);
+*/
